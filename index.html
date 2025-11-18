@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantum CLI Encryptor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+        background: #0b0d17;
+        color: #f2f4f8;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      code {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: "Fira Code", monospace;
+      }
+      pre {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+      }
+      a {
+        color: #61dafb;
+      }
+      footer {
+        margin-top: 3rem;
+        font-size: 0.85rem;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Quantum CLI Encryptor</h1>
+      <p>
+        This project ships a secure Arch Linux command-line program that encrypts user messages with
+        a quantum-sourced key derivation workflow. The CLI consumes entropy from the
+        <a href="https://qrng.anu.edu.au" target="_blank" rel="noreferrer">ANU QRNG API</a>,
+        derives keys via PBKDF2-HMAC-SHA512, and stores a deterministic 512-character ciphertext in
+        <code>&lt;username&gt;.txt</code>.
+      </p>
+      <h2>Build</h2>
+      <pre><code>make</code></pre>
+      <h2>Run</h2>
+      <pre><code>./quantum_cli</code></pre>
+      <h2>Test</h2>
+      <pre><code>make test</code></pre>
+      <p>
+        The binary lives entirely in C with memory cleansing, strict password validation, and safe
+        file replacement. Source code resides in <code>src/</code> and tests in <code>tests/</code>.
+      </p>
+    </main>
+    <footer>
+      Deploying via Vercel serves this reference page while the CLI continues to operate locally.
+    </footer>
+  </body>
+</html>
